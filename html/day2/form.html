@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style> 
+
+    .for_nav{
+        display: flex;
+background-color: gray;
+width: auto;
+    }
+
+    .for_nav ul{
+text-align: left;
+}
+
+.for_nav img{
+position: absolute;
+right: 0%;
+}
+
+ul li{
+display: inline;
+color:brown;
+justify-content: space-between;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+    </style> 
+
+</head>
+<body>
+
+
+
+<!-- Navigation Menu -->
+<nav class="for_nav">
+  <ul>
+    <li class="active"><a href="./link.html">Home</a></li>
+        <li><a href="./day2.html">Road Map</a></li> 
+        <li><a href="./form.html">Regestration Form</a></li>
+         <li><a href="https://www.iti.gov.eg/iti/home">Contact</a> </li>
+  </ul>
+
+     <!-- Logo -->
+  <img src="./imgs/ITI_logo.png" height="60px"/>
+
+
+</nav>
+
+
+
+
+
+<hr>
+
+<!--
+
+  <thead><h2>Register - Create Account</h2></thead>
+
+  <tr><p style="border-style: dashed;width: fit-content;background-color: aqua;border-width: thin;"> Field marked with <span style="color: red;">*</span> are compulsory</p></tr>
+  
+
+
+
+  <tr>
+    <td>
+      <label><p style="background-color: aqua;"><span style="color: red;">*</span>Your Postal Address</p></label>
+    </td>
+    <td>
+      <textarea id="Adress" name="Adress" rows="5" cols="20">
+    </td>
+
+  </tr>
+
+
+-->
+
+
+<form action="process.php" method="POST">
+
+  <table class="center" >
+    <caption><h2>Register - Create Account</h2></caption>
+    <caption><p style="border-style: dashed;width: auto;background-color: aqua;border-width: thin;"> Field marked with <span style="color: red;">*</span> are compulsory</p> </caption>
+    <tr>
+      <td ><p style="background-color: aqua;"><span style="color: red;">*</span>Your Name</p></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td ><p style="background-color: aqua;"><span style="color: red;">*</span>E-Mail ID</p></td>
+      <td><input type="email"></td>
+    </tr>
+    <tr>
+      <td ><p style="background-color: aqua;">Alternate E-Mail ID</p></td>
+      <td><input type="text"></td>
+    </tr>
+  
+    <tr>
+      <td rowspan="2"><label><p style="background-color: aqua;">Phone</p></label></td>
+      <td>country code
+        city code
+        phone number
+      </td>
+    </tr>
+    <tr>
+      <td><input type="text" name="phone" size="5"></td>
+      <td><input type="text" name="phone" size="5"></td>
+      <td><input type="text" name="phone" size="5"></td>
+    </tr>
+  
+    <tr>
+      <td>
+        <label><p style="background-color: aqua;">Mobile Phone</p></label>
+      </td>
+      <td>
+        <input type="text" name="your phone" size="15">
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        <label><p style="background-color: aqua;"><span style="color: red;">*</span>Country</p></label>
+      </td>
+  
+      <td>
+        <select name="country" id="country">
+          <option value="None">------select one -------</option>
+          <option value="Egypt">Egypt</option>
+          <option value="France">France</option>
+          <option value="UAE">UAE</option>
+          <option value="USA">USA</option>
+        </select>
+      </td>
+  
+    </tr>
+  
+  
+          <tr>
+            <td>
+              <label><p style="background-color: aqua;"><span style="color: red;">*</span>Password</p></label>
+            </td>
+            <td>
+              <input type="password" required>
+            </td>
+          </tr>
+  
+          <tr>
+            <td>
+              <label><p style="background-color: aqua;"><span style="color: red;">*</span>Re - Enter Password</p></label>
+            </td>
+            <td>
+              <input type="password" required>
+            </td>
+          </tr>
+   
+  </table>
+  
+  <div style="text-align:center">
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I accept the <a href="https://www.iti.gov.eg/iti/home" >Terms of Use</a></label><br>  
+  </div>
+  
+  <div style="text-align:center">
+    <input type="submit" name="submit" value="Continue" data-inline="true"/>
+    <input type="reset" name="submit" value="Reset" data-inline="true"/>
+  </div>
+
+</form>
+
+
+
+
+<hr>
+<p style="text-align:center;color: blueviolet;">
+    Copyright 2022 by Noha Salah ®. All Rights Reserved.
+</p>
+</body>
+</html>
