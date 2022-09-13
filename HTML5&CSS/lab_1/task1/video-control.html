@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./css/style.css">
     <title>Custom Video Control</title>
 </head>
 <body>
+
+    <div class="myVideo">
+        <video id = "frozen" width="700px">
+            <source src="./video/frozen.mp4">
+        </video>
+        <br>
+        <br>
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="normalScreen()">Normal Screen</button>
+        <button onclick="bigScreen()">Big Screen</button>
+        <button onclick="smallScreen()">Small Screen</button>
+        <button onclick="mute()">Mute</button>
+        <button onclick="backward()">&lt;</button>
+        <button onclick="forward()">&gt;</button>
+        <button onclick="toBegin()">&lt;&lt;</button>
+        <button onclick="toEnd()">&gt;&gt;</button>
+
+
+    </div>
 
         <script src="./js/video-control.js"></script>
 
