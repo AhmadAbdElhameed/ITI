@@ -40,13 +40,13 @@ function mute(){
 		myvideo.muted = true;
 	}
 }
-  // Go 10 second Backward Button Function
+  // Go 10 second Backward
 function backward() {
     var myvideo = document.getElementById("frozen")
     myvideo.currentTime -= 10;
 };
 
-  // Go 10 seconds forward Button Function
+  // Go 10 seconds forward
 function forward() {
     var myvideo = document.getElementById("frozen")
     myvideo.currentTime += 10;
@@ -54,7 +54,7 @@ function forward() {
 
 
 
-// Go To Start Of Vedio Button Function
+// Go To Start Of Video
 function toBegin() {
     var myvideo = document.getElementById("frozen")
     myvideo.currentTime = 0;
@@ -63,7 +63,7 @@ function toBegin() {
         playBtn.innerHTML = "Stop";
     }
 };
-  // Go To End Of Vedio Button Function
+  // Go To End Of Video
 function toEnd() {
     var myvideo = document.getElementById("frozen")
     myvideo.currentTime = myvideo.duration;
