@@ -14,5 +14,21 @@ button{
 }
 
 button:hover{
-    box-shadow: 5px 5px 50px rgb(17, 161, 60);
+    animation: animation 5s 15 linear;
+}
+
+@keyframes animation {
+
+    50% {
+        background-color:rgb(16, 187, 53);
+        box-shadow: rgba(23, 112, 1, 0.25) 0px 10px 55px, rgb(126, 248, 56) 0px -12px 30px, rgb(93, 245, 138) 0px 4px 6px, rgb(229, 253, 185)0px 12px 13px, rgb(133, 133, 218) 0px -2px 5px;
+    }
+    75%{
+        background-color: rgb(255, 0, 0);
+        box-shadow: rgba(187, 2, 2, 0.877) 0px 10px 55px, rgb(253, 59, 45) 0px -12px 30px, rgb(252, 84, 84) 0px 4px 6px, rgb(255, 168, 168)0px 12px 13px, rgb(133, 133, 218) 0px -2px 5px;
+    }
+    100% {
+        background-color:rgb(38, 0, 255);
+        box-shadow: rgba(2, 0, 138, 0.25) 0px 10px 55px, rgb(55, 55, 247) 0px -12px 30px, rgb(103, 103, 255) 0px 4px 6px, rgb(162, 162, 248)0px 12px 13px, rgb(133, 133, 218) 0px -2px 5px;
+    }
 }
