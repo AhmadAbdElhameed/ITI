@@ -1,0 +1,41 @@
+.container {
+    margin: 25vh auto 0;
+    border: 1px solid rgb(115, 65, 128);
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    margin-left: 15px;
+    border: 1px solid rgb(17, 0, 252);
+    border-radius: 2px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 5px 20px;
+    display: block;
+}
+
+input:not(:placeholder-shown) {
+    border-color: rgb(0, 0, 0);
+}
+input:not(:placeholder-shown) + p {
+    display: none;
+}
+
+input:placeholder-shown {
+    border-color: black;
+}
+
+p {
+    margin-left: 15px;
+}
+
+button {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}

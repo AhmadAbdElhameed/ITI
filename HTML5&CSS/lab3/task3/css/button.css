@@ -1,0 +1,18 @@
+.btn{
+    text-align: center;
+    margin-top: 30vh;
+    color: aqua;
+}
+
+button{
+    border-radius: 0px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 10px 40px;
+}
+
+button:hover{
+    box-shadow: 5px 5px 50px rgb(17, 161, 60);
+}
