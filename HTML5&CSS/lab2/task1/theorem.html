@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Canvas experiment</title>
+    <script>
+        window.MathJax = {
+        MathML: { extensions: ["mml3.js", "content-mathml.js"] },
+        };
+    </script>
+    <script
+        type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML">
+    </script>
+<script type="application/javascript">
+function draw() {
+    const canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'red';
+    // Stroked triangle
+    ctx.beginPath();
+    ctx.moveTo(200 ,100);
+    ctx.lineTo(200, 300);
+    ctx.lineTo(500, 300);
+    ctx.closePath();
+    //Fill triangle with previous set color.
+    ctx.fill();
+    //Give triangle a stroke (width: 4 pixels).
+    ctx.strokeStyle = 'blue'
+    ctx.lineWidth   = 2;
+    ctx.stroke();
+
+    // A
+    ctx.font = '30px serif';
+    ctx.fillText('A', 150, 225);
+
+    // B
+    ctx.font = '30px serif';
+    ctx.fillText('B', 320, 350);
+
+
+    // C
+    ctx.font = '30px serif';
+    ctx.fillText('C', 360, 180);
+    }
+}
+</script>
+</head>
+<body onload="draw();">
+
+    <div style="justify-content: center;display: flex;">
+        <p style="font-size: 40px;">Phethagorth Theorem</p>
+        <br>
+        <br>
+    </div>
+<div style="justify-content: center;display: flex;">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+            <mi>C</mi>
+            <mn>2</mn>
+        </msup>
+        <mo>=</mo>
+        <msqrt>
+            <msup>
+                <mi>A</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>&#x2212;<!-- minus sign --></mo>
+            <msup>
+                <mi>B</mi>
+                <mn>2</mn>
+            </msup>
+        </msqrt>
+    </math>
+
+</div>
+<div style="justify-content: center;display: flex;">
+    <canvas id="canvas" width="500" height="400"></canvas>
+</div>
+
+
+</body>
+</html>
