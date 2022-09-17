@@ -1,8 +1,6 @@
 var line = document.getElementById('line');
 document.body.addEventListener('load', drawLine());
 
-
-
 function drawLine() {
     line.attributes.x2.value = 0;
     line.attributes.y2.value = 0;
