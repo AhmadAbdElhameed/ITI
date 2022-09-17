@@ -1,123 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
-    <head>
-        <meta charset=utf-8 />
-        <title>Draw a line</title>
-    </head>
+<head>
+    <title>Animation Line</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        <canvas id="DemoCanvas" width="500" height="500"></canvas>  
-        <script>  
+<body>
 
+    <div class="container">
 
+        <svg width="500" height="500" style="border: 2px solid">
+            <line id="line" x1="0" y1="0" x2="50" y2="50" style="stroke:rgb(194, 30, 30);stroke-width:4" ></line>
+        </svg>
+    
+    </div>
+    <script src="./js/anim.js"></script>
+</body>
 
-//Start point: 10, 20 end point: 150200
-const points = [
-    [200, 100], // up
-    [300, 200], // right
-    [100, 200], // left
-    [200, 100], // up
-    [200, 300], // next
-    [100, 200], // left
-    [300, 200], // right
-    [200, 300]
-    ];
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
-    const speed = 10; // speed
-    // const img = new Image();
-    // img.onload = function() {
-    // canvas.width = img.width;
-    // canvas.height = img.height;
-    animate(ctx);
-    // };
-
-    // img.src = "./imgs/demo.png";
-    function animate(ctx) {
-      // ctx.drawImage(img, 0, 0);
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        points.forEach(([x, y]) => {
-        drawDot(x, y);
-        });
-            lineMove(points);
-        }
-    function lineMove(points) {
-        if (points.length < 2) {
-            return;
-        }
-        const [[x1, y1], [x2, y2]] = points;
-        let dx = x2 - x1;
-        let dy = y2 - y1;
-        if (Math.abs(dx) < 1 && Math.abs(dy) < 1) {
-            points = points.slice(1);
-            lineMove(points);
-            return;
-        }
-        let x = x1,
-        Y = Y1; // end point during line drawing
-        if (dx === 0) {
-        (x = x2), (y += (speed * dy) / Math.abs(dy));
-        } else if (dy === 0) {
-        x += (speed * dx) / Math.abs(dx);
-        y = y2;
-        } else if (Math.abs(dx) >= 1) {
-        let rate = dy / dx;
-        x += (speed * dx) / Math.abs(dx);
-        y += (speed * rate * dx) / Math.abs(dx);
-        }
-        drawLine(x1, y1, x, y);
-        points[0] = [x, y];
-        window.requestAnimationFrame(function () {
-        lineMove(points);
-        });
-    }
-
-    function drawLine(x1, y1, x2, y2) {
-        ctx.save();
-        CTX. Beginpath(); // if you don't write, the last line will be redrawn every time
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        var grd = ctx.createLinearGradient(x1, y1, x2, y2);
-
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.closePath();
-        ctx.strokeStyle = "rgba(255,255,255,1)";
-        ctx.stroke();
-        ctx.restore();
-    }
-
-    function drawDot(x1, y1, r) {
-        ctx.save();
-        CTX. Beginpath(); // no write will connect with line
-        ctx.fillStyle = "red";
-        //Draw as rectangle
-        ctx.arc(x1, y1, r ? r : 2, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.restore();
-    }
-
-
-
-            
-        /*
-            var canvas = document.getElementById('DemoCanvas');
-            //Always check for properties and methods, to make sure your code doesn't break in other browsers.
-            if (canvas.getContext) 
-            {
-            var context = canvas.getContext('2d');
-            // Reset the current path
-            context.beginPath(); 
-            // Staring point
-            context.moveTo(0,0);
-            // End point
-            context.lineTo(500,500);
-            // Make the line visible
-            context.stroke();
-            }
-        */
-
-        </script> 
-    </body>
 </html>

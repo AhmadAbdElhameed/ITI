@@ -1,112 +1,53 @@
-(function () {
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
-    }
-
-    if (!window.requestAnimationFrame) window.requestAnimationFrame = function (callback, element) {
-        var currTime = new Date().getTime();
-        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-        var id = window.setTimeout(function () {
-            callback(currTime + timeToCall);
-        },
-        timeToCall);
-        lastTime = currTime + timeToCall;
-        return id;
-    };
-
-    if (!window.cancelAnimationFrame) window.cancelAnimationFrame = function (id) {
-        clearTimeout(id);
-    };
-}());
+var line = document.getElementById('line');
+document.body.addEventListener('load', drawLine());
 
 
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-ctx.lineCap = "round";
 
-// variable to hold how many frames have elapsed in the animation
-var t = 1;
+function drawLine() {
+    line.attributes.x2.value = 0;
+    line.attributes.y2.value = 0;
+    setTimeout(() => {
+        line.attributes.x2.value = 50;
+        line.attributes.y2.value = 50;
+    }, 1000);
+    setTimeout(() => {
+        line.attributes.x2.value = 100;
+        line.attributes.y2.value = 100;
+    }, 1500);
+    setTimeout(() => {
+        line.attributes.x2.value = 150;
+        line.attributes.y2.value = 150;
+    }, 2000);
+    setTimeout(() => {
+        line.attributes.x2.value = 200;
+        line.attributes.y2.value = 200;
+    }, 2500);
+    setTimeout(() => {
+        line.attributes.x2.value = 250;
+        line.attributes.y2.value = 250;
+    }, 3000);
+    setTimeout(() => {
+        line.attributes.x2.value = 300;
+        line.attributes.y2.value = 300;
+    }, 3500);
+    setTimeout(() => {
+        line.attributes.x2.value = 350;
+        line.attributes.y2.value = 350;
+    }, 4000); 
+    setTimeout(() => {
+        line.attributes.x2.value = 400;
+        line.attributes.y2.value = 400;
+    }, 4500); 
+    setTimeout(() => {
+        line.attributes.x2.value = 450;
+        line.attributes.y2.value = 450;
+    }, 5000);
+    setTimeout(() => {
+        line.attributes.x2.value = 500;
+        line.attributes.y2.value = 500;
+    }, 5500);
+    setTimeout(() => {
+        alert("Animation End");
+    }, 5550);
 
-// define the path to plot
-var vertices = [];
-vertices.push({
-    x: 0,
-    y: 0
-});
-vertices.push({
-    x: 300,
-    y: 100
-});
-vertices.push({
-    x: 80,
-    y: 200
-});
-vertices.push({
-    x: 10,
-    y: 100
-});
-vertices.push({
-    x: 0,
-    y: 0
-});
-
-// draw the complete line
-ctx.lineWidth = 1;
-// tell canvas you are beginning a new path
-ctx.beginPath();
-// draw the path with moveTo and multiple lineTo's
-ctx.moveTo(0, 0);
-ctx.lineTo(300, 100);
-ctx.lineTo(80, 200);
-ctx.lineTo(10, 100);
-ctx.lineTo(0, 0);
-// stroke the path
-ctx.stroke();
-
-
-// set some style
-ctx.lineWidth = 5;
-ctx.strokeStyle = "blue";
-// calculate incremental points along the path
-var points = calcWaypoints(vertices);
-// extend the line from start to finish with animation
-animate(points);
-
-
-// calc waypoints traveling along vertices
-function calcWaypoints(vertices) {
-    var waypoints = [];
-    for (var i = 1; i < vertices.length; i++) {
-        var pt0 = vertices[i - 1];
-        var pt1 = vertices[i];
-        var dx = pt1.x - pt0.x;
-        var dy = pt1.y - pt0.y;
-        for (var j = 0; j < 100; j++) {
-            var x = pt0.x + dx * j / 100;
-            var y = pt0.y + dy * j / 100;
-            waypoints.push({
-                x: x,
-                y: y
-            });
-        }
-    }
-    return (waypoints);
-}
-
-
-function animate() {
-    if (t < points.length - 1) {
-        requestAnimationFrame(animate);
-    }
-    // draw a line segment from the last waypoint
-    // to the current waypoint
-    ctx.beginPath();
-    ctx.moveTo(points[t - 1].x, points[t - 1].y);
-    ctx.lineTo(points[t].x, points[t].y);
-    ctx.stroke();
-    // increment "t" to get the next waypoint
-    t++;
 }
