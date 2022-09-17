@@ -40,6 +40,17 @@ function mute(){
 		myvideo.muted = true;
 	}
 }
+
+// volume bar 
+const volRangeVid = document.getElementById('volRange');
+volRangeVid.addEventListener('input', () => {
+    var myvideo = document.getElementById("frozen")
+    myvideo.volume = volRangeVid.value / 100;
+
+});
+
+
+
   // Go 10 second Backward
 function backward() {
     var myvideo = document.getElementById("frozen")
@@ -74,6 +85,20 @@ function toEnd() {
 };
 
 
+// time line for video
+function vidStartTime() {
+    var myvideo = document.getElementById("frozen")
+    var min = parseInt(myvideo.currentTime / 60, 10);
+    var sec = Math.round(myvideo.currentTime % 60);
+    startTime.innerHTML = `${min}:${sec}`;
+    vidBar.value = myvideo.currentTime;
+    setInterval(() => {
+        vidStartTime();
+    }, 1);
+
+} // to display start time of video by minutes and seconds
+
+document.body.addEventListener('load', vidStartTime());
 
 
 
