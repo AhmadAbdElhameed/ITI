@@ -1,0 +1,41 @@
+*{
+    border: border-box;
+    margin: 0;
+}
+
+.container{
+    width: 700px;
+    margin: auto ;
+}
+
+.image-slider{
+    width:500px;
+}
+
+img{
+    display: none;
+}
+.img-active{
+    display: block;
+}
+.image-slider img{
+    width:700px;
+    height: 500px;
+}
+
+.img-slider button {
+    color: rgb(22, 13, 13);
+    padding: 10px;
+    font-size: 9rem;
+
+}
+
+div button{
+    margin-top: 50px;
+    margin-left: 300px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(0, 255, 255);
+    font-style: bold;
+
+}
