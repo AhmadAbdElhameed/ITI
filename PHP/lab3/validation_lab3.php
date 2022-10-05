@@ -12,7 +12,7 @@
         <?php
             // define variables
             $nameErr = $emailErr = $genderErr = "";
-            $name = $email = $gender = $comment = $group =  "";
+            $name = $email = $gender = $comment = $group = $courses = "";
             if($_SERVER['REQUEST_METHOD'] == "POST"){
                 if(empty($_POST['name'])){
                     $nameErr = "Please Enter A valid name";
@@ -55,17 +55,26 @@
         $comment = test_input($_POST['comment']);
 
     }
-
     if(empty($_POST['courses'])){
         $courses = "";
     }else{
-        $courses = test_input($_POST['courses']);
+        $courses = $_POST['courses'];
 
     }
 
-    Check if form is submitted successfully
+    // if(!empty($_POST['courses'])){
+    //     foreach($_POST['courses'] as $selected){
+    //         echo $selected."<br>";
+    //     }
+    // }
 
-
+    // if(isset($_POST['submit'])){
+    //     if(!empty($_POST['courses'])){
+    //         foreach($_POST['courses'] as $selected){
+    //             echo $selected."<br>";
+    //             }
+    //         }
+    //     }
 
     function test_input($data){
         $data = trim($data);
@@ -74,7 +83,7 @@
         return $data;
     }
 
-        ?>
+    ?>
 
 <h1>Registeration Form Using PHP and HTML</h1>
 <span style="color:red;">*</span><span style="font-style:italic;font-weight: bold;">   Required Field</span>  <br>
@@ -109,7 +118,7 @@
         <option value = "node">NodeJs</option>
     </select><br>
     <label for="agree"> Agree</label>
-    <input type="checkbox" id="agree" name="agree" value="agree" require><span style="color:red;">   *</span><br>
+    <input type="checkbox" id="agree" name="agree" value="agree" required ><span style="color:red;">   *</span><br>
 
     <input type = "submit" name = "submit" value = Submit>
 </form>
@@ -128,7 +137,10 @@
     echo "<br>";
     echo $gender;
     echo "<br>";
-    echo $courses;
+    foreach($_POST['courses'] as $selected){
+        echo $selected."<br>";
+    }
+
 
 ?>
 
