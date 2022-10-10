@@ -100,7 +100,7 @@
     <input type="text" id="group" name="group" value="<?php if(!empty($emailErr) || !empty($nameErr)) echo $group; ?>"><br>
     
     <label for="comment">Message:</label>
-    <textarea name="comment" id="" cols="30" rows="10" ></textarea><br>
+    <textarea name="comment" id="" cols="30" rows="10" required ><?php if(isset($comment)){ echo $comment;} ?></textarea><br>
     
     <label for="gender">Gender:</label>
     <input type="radio" name="gender" value="male" class='check' <?php if(!empty($emailErr) || !empty($nameErr) && $_POST['gender'] == 'male') {echo 'checked="checked"';} ?>> Male
