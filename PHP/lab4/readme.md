@@ -12,5 +12,7 @@
 **How its work :**
 <br>
 <br>
-<video src="media/crud.mov" controls="controls" style="max-width: 730px;">
+
+<video width="320" height="240" controls>
+  <source src="crud.mov" type="video/mov">
 </video>
