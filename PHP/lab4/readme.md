@@ -12,5 +12,5 @@
 **How its work :**
 <br>
 <br>
-<video src="media/crud.mp4" controls="controls" style="max-width: 730px;">
+<video src="media/crud.mov" controls="controls" style="max-width: 730px;">
 </video>
