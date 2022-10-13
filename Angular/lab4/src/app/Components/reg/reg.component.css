@@ -1,0 +1,21 @@
+.container
+{
+  width: 50%;
+}
+
+.container h3
+{
+  text-align: center;
+}
+
+.container form .btn{
+ /* margin-left: 35%; */
+ display: flex;
+ justify-content: center;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #00b3db;
+  border-color: #285e8e; /*set the color you want here*/
+}

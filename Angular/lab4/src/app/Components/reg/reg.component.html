@@ -1,0 +1,33 @@
+
+  <div class="container">
+    <h3>Registation Form</h3>
+    <form [formGroup] = "myRegFormValidation" class="form" (ngSubmit)="SendData()">
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Name : </label>
+        <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1">
+        <div *ngIf="!NameValid">
+          <p class="alert alert-danger"> Name length must be &gt; 3 </p>
+        </div>
+      </div>
+      <div class="mb-3">
+          <label for="mail" class="form-label">Email : </label>
+          <input formControlName="mail" type="text" class="form-control" id="mail">
+          <div *ngIf="!MailValid">
+              <p class="alert alert-danger"> Please Insert a valid mail </p>
+            </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input formControlName="age" type="number" class="form-control" id="age">
+        <div *ngIf="!AgeValid">
+          <p class="alert alert-danger">Age Must be &gt; 20 And &lt; 40</p>
+        </div>
+
+      </div>
+      <div class="btn">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
