@@ -7,7 +7,7 @@
 - browser will open project on port 4200
 
 
-** How It Works **
+**How It Works**
 
 
 
