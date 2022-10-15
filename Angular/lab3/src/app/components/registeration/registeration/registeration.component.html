@@ -1,0 +1,42 @@
+<!-- <h3>Registeration</h3>
+<div>
+  <label>Name :</label>
+  <input type="text" [(ngModel)]="studentName" />
+  <div style=" border: 0ch; color: red;" *ngIf="studentName.length <3&& studentName !='' ">
+    Length &gt; 3
+  </div>
+  <label>Age :</label>
+  <input type="number"  [(ngModel)]="studentAge"/>
+  <div style=" border: 0ch; color: red;" *ngIf="studentAge >40 ">
+    Age Not Valid
+  </div>
+  <div style=" border: 0ch; color: red;" *ngIf="studentAge <20 &&studentAge !=0  ">
+    Age Not Valid
+  </div>
+  <input type="button" value="Add student" (click)="AddStudent()"/>
+</div> -->
+
+
+<div class="header">
+  <h1>Registration Form</h1>
+</div>
+
+
+<div class="container">
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Type Student Name..." [(ngModel)] = "studentName" autocomplete="off" />
+  <div style="color: red; font-weight: bold;" *ngIf="studentName.length < 3 && studentName !=''">
+    Less Than 3 characters
+  </div>
+  <label for="age" class="age">Age</label>
+  <input type="number" name="age" placeholder="Type Student Age..." [(ngModel)]= "studentAge" autocomplete="off" />
+  <div style="color: red; font-weight: bold;" *ngIf="studentAge < 30;else trueBlock">
+    Not Valid
+  </div>
+  <ng-template #trueBlock>
+    <div style="color: rgb(0, 0, 0); font-weight: bold;">
+      Valid
+    </div>
+  </ng-template>
+  <input type="button" value="Add" (click)="AddStudent()"/>
+</div>

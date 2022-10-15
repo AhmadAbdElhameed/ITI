@@ -1,0 +1,37 @@
+
+.header{
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  text-align: center;
+}
+
+h1{
+  background-color: #006811;
+  font-weight: bold;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.student{
+  width : 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.student table{
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 20px;
+  width: 800px;
+  background-color: #9caf79;
+
+}
+
+.student table th{
+  padding:0 30px;
+  color: #ffffff;
+}

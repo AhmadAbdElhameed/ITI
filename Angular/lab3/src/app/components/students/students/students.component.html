@@ -1,0 +1,30 @@
+<div class="header">
+  <h1>Students</h1>
+</div>
+
+<div class="student">
+    <table>
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let item of DataFromParent">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+
+
+<!---
+
+  <tr >*ngFor="let s of AllStudents"
+    <td> Ahmed</td>-{{s.name}}-
+    <td >20</td>!--{{s.age}}--
+
+  </tr>
+-->
