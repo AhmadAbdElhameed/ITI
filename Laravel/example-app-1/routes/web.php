@@ -42,6 +42,9 @@ Route::get(uri:'/posts', action:[PostController::class, 'index'])->name('posts.i
 Route::get(uri:'/posts/create', action:[PostController::class, 'create'])->name('posts.create');
 Route::get(uri:'/posts/{post}', action:[PostController::class, 'show'])->name('posts.show');
 Route::post(uri:'/posts', action:[PostController::class, 'store'])->name('posts.store');
+Route::get(uri:'/posts/{post}/edit', action:[PostController::class, 'edit'])->name('posts.edit');
+Route::put(uri:'/posts/{post}', action:[PostController::class, 'update'])->name('posts.update');
+Route::delete(uri:'/posts/{post}', action:[PostController::class, 'destroy'])->name('posts.destroy');
 
 // Route::get('/create', function () {
 //     return view("create");

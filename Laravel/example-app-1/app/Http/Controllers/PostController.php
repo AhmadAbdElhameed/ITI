@@ -33,7 +33,7 @@ class PostController extends Controller
         //dd($single_post);
         return view("posts.show",['post' => $single_post]);
     }
-    public function store(){
+    public function store(Request $request){
 
         $data = request()->all();
         $title = $data['title'];
@@ -41,6 +41,9 @@ class PostController extends Controller
         $post_creator = $data['post_creator'];
 
         //dd($title,$description,$post_creator);
+        $title = $request->title;
+        $description = $request->description;
+        $post_creator = $request->post_creator;
 
         $post = Post::create([
             'title' => $title,
@@ -50,4 +53,28 @@ class PostController extends Controller
 
         return redirect()->route('posts.index');
     }
+
+    public function edit($post){
+        $single_post = Post::findOrFail($post);
+        return view('posts.edit',['post' => $single_post]);
+    }
+    public function update($post,Request $request){
+        $single_post = Post::findOrFail($post);
+
+        $single_post -> update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'post_creator' => $request->post_creator
+        ]);
+
+        //dd($single_post);
+        return redirect()->route('posts.index');
+    }
+    public function destroy($post){
+        $single_post = Post::findOrFail($post);
+        $single_post -> delete();
+        return redirect()->route('posts.index');
+    }
+
+
 }
