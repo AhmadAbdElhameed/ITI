@@ -20,7 +20,7 @@
                             <tr>
                                 <td>{{$post["id"]}}</td>
                                 <td>{{$post["title"]}}</td>
-                                <td>{{$post["post_creator"]}}</td>
+                                <td>{{$post->user->name}}</td>
                                 <td>{{$post->created_at->format("Y-m-d")}}</td>
                                 <td>
                                     <a href="{{route('posts.edit',$post['id'])}}" class="btn btn-primary">Edit</a>

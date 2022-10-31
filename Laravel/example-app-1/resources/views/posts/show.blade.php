@@ -16,8 +16,8 @@
                         Post Creator Info
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Name : {{$post['post_creator']}}</h5>
-                        <h5 class="card-title">Email : {{$post['']}}</h5>
+                        <h5 class="card-title">Name : {{$post->user->name}}</h5>
+                        <h5 class="card-title">Email : {{$post->user->email}}</h5>
                         <h5 class="card-title">Created At : {{$post['created_at']}}</h5>
                     </div>
                 </div>

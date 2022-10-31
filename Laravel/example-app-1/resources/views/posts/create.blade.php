@@ -38,11 +38,10 @@
 
                 <div class="mb-3">
                     <label class="form-label">Post Creator</label>
-                    <select name="post_creator" class="form-control">
-                        <option>Ahmad</option>
-                        <option>Mohamed</option>
-                        <option>Hasan</option>
-                        <option>Nabil</option>
+                    <select name="user_id" class="form-control">
+                        @foreach ($users as $user)
+                            <option value="{{$user->id}}">{{$user->name}}</option>
+                        @endforeach
                     </select>
                 </div>
 
