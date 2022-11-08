@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Comment;
+use App\Http\Requests\StorePostRequest;
+
 class PostController extends Controller
 {
     public function index(){
@@ -33,14 +36,15 @@ class PostController extends Controller
     public function show($postId){
         $users = User::all();
         $single_post = Post::findOrFail($postId);
+        $comments=Comment::where('commentable_id',$postId)->get();
         //return "Show Page";
         //dd($single_post);
-        return view("posts.show",['post' => $single_post,'users' => $users]);
+        return view("posts.show",['post' => $single_post,'users' => $users,'comments'=>$comments]);
     }
 
 
 
-    public function store(Request $request){
+    public function store(StorePostRequest $request){
 
         $data = request()->all();
         // $title = $data['title'];
@@ -48,6 +52,7 @@ class PostController extends Controller
         // $post_creator = $data['post_creator'];
 
         //dd($title,$description,$post_creator);
+
         $title = $request->title;
         $description = $request->description;
         $userId = $request->user_id;
